@@ -73,7 +73,6 @@
                 <li><a href="#venue">Контакты</a></li>
 
 
-
                 <li class="buy-tickets"><a href="#buy-tickets">Buy Tickets</a></li>
             </ul>
         </nav><!-- #nav-menu-container -->
@@ -89,11 +88,17 @@
           data-autoplay="true"></a>
         <a href="#about" class="about-btn scrollto">About The Event</a>-->
         <p style="font-size: 20px">Бронирование авиа-билета и гостиницы включено (под ключ)</p>
-        <div class="form">
-            <input class="main-form" type="text" placeholder="Имя">
-            <input class="main-form" type="text" placeholder="+7(XXX) XXX XXXX">
-            <button type="button">Получить консультацию</button>
-        </div>
+
+
+        <form method="post">
+            <div class="form">
+                <input name="name" class="main-form" type="text" placeholder="Имя">
+                <input name="phone" class="main-form" type="text" placeholder="+7(XXX) XXX XXXX">
+                <button value="Submit" type="button">Получить консультацию</button>
+            </div>
+        </form>
+
+
         <br>
         <p style="font-size: 18px">Закажи бесплатную консультацию и получи перечень документов </p>
         <!--<span style="color: #fff; cursor: pointer" class="fa fa-arrow-down fa-3x"></span>-->
@@ -110,7 +115,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Нас выбирают потому что</h2>
-                <p>Here are some of our speakers</p>
+                <!--<p>Here are some of our speakers</p>-->
             </div>
 
             <div class="row">
@@ -148,7 +153,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Какие визы мы оформляем?</h2>
-                <p>Her are some nearby hotels</p>
+                <!--<p>Her are some nearby hotels</p>-->
             </div>
 
             <div class="row">
@@ -331,7 +336,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Buy Tickets</h4>
+                        <h4 class="modal-title">Введите Ваши данные</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -339,21 +344,13 @@
                     <div class="modal-body">
                         <form method="POST" action="#">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="your-name" placeholder="Your Name">
+                                <input type="text" class="form-control" name="your-name" placeholder="Имя">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="your-email" placeholder="Your Email">
-                            </div>
-                            <div class="form-group">
-                                <select id="ticket-type" name="ticket-type" class="form-control">
-                                    <option value="">-- Select Your Ticket Type --</option>
-                                    <option value="standard-access">Standard Access</option>
-                                    <option value="pro-access">Pro Access</option>
-                                    <option value="premium-access">Premium Access</option>
-                                </select>
+                                <input type="text" class="form-control" name="your-email" placeholder="+7 (XXX) XXX XXXX">
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn">Buy Now</button>
+                                <button type="submit" class="btn">Получить консультацию</button>
                             </div>
                         </form>
                     </div>
@@ -370,15 +367,42 @@
                 <p>если вы ещё не решили</p>
             </div>
 
-            <form method="POST" action="#">
+            <form>
                 <div class="form-row justify-content-center">
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-xl">Пройти мини-опрос</button>
+                        <button type="button" data-toggle="modal" data-ticket-type="standard-access" data-target="#quiz" class="btn btn-xl">Пройти мини-опрос</button>
                     </div>
                 </div>
             </form>
 
         </div>
+
+        <!-- Modal Order Form -->
+        <div id="quiz" class="modal fade">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Введите Ваши данные</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST" action="#">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="your-name" placeholder="Имя">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="your-email" placeholder="+7 (XXX) XXX XXXX">
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn">Получить консультацию</button>
+                            </div>
+                        </form>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
     </section>
 
     <section id="schedule" class="section-with-bg">
@@ -386,25 +410,8 @@
             <div class="section-header">
                 <h2>Передавайте документы любым удобным способом
                 </h2>
-                <!--<p>Here is our event schedule</p>-->
             </div>
 
-            <!-- <ul class="nav nav-tabs" role="tablist">
-                 <li class="nav-item">
-                     <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">Day 1</a>
-                 </li>
-                 <li class="nav-item">
-                     <a class="nav-link" href="#day-2" role="tab" data-toggle="tab">Day 2</a>
-                 </li>
-                 <li class="nav-item">
-                     <a class="nav-link" href="#day-3" role="tab" data-toggle="tab">Day 3</a>
-                 </li>
-             </ul>-->
-
-            <!--<h3 class="sub-heading">Voluptatem nulla veniam soluta et corrupti consequatur neque eveniet officia. Eius
-                necessitatibus voluptatem quis labore perspiciatis quia.</h3>
-
-            <div class="tab-content row justify-content-center">-->
 
             <!-- Schdule Day 1 -->
             <div role="tabpanel" class="col-lg-12 tab-pane fade show active" id="day-1">
@@ -444,9 +451,6 @@
             <!-- End Schdule Day 1 -->
 
 
-
-        </div>
-
         </div>
 
     </section>
@@ -464,7 +468,8 @@
                     <ul id="faq-list">
 
                         <li>
-                            <a data-toggle="collapse" class="collapsed" href="#faq1">Как быстро можно получить Визу? <i class="fa fa-minus-circle"></i></a>
+                            <a data-toggle="collapse" class="collapsed" href="#faq1">Как быстро можно получить Визу? <i
+                                    class="fa fa-minus-circle"></i></a>
                             <div id="faq1" class="collapse" data-parent="#faq-list">
                                 <p>
                                     Вы получите Визу через неделю после сдачи отпечатков пальцев в посольстве.
@@ -473,16 +478,19 @@
                         </li>
 
                         <li>
-                            <a data-toggle="collapse" href="#faq2" class="collapsed">На какое время даётся Виза?<i class="fa fa-minus-circle"></i></a>
+                            <a data-toggle="collapse" href="#faq2" class="collapsed">На какое время даётся Виза?<i
+                                    class="fa fa-minus-circle"></i></a>
                             <div id="faq2" class="collapse" data-parent="#faq-list">
                                 <p>
-                                    Виза дается на три месяца (В течение трёх месяцев вы можете находиться на территории Китая ровно 30 дней).
+                                    Виза дается на три месяца (В течение трёх месяцев вы можете находиться на территории
+                                    Китая ровно 30 дней).
                                 </p>
                             </div>
                         </li>
 
                         <li>
-                            <a data-toggle="collapse" href="#faq3" class="collapsed">В каких городах Казахстана вы работаете?<i class="fa fa-minus-circle"></i></a>
+                            <a data-toggle="collapse" href="#faq3" class="collapsed">В каких городах Казахстана вы
+                                работаете?<i class="fa fa-minus-circle"></i></a>
                             <div id="faq3" class="collapse" data-parent="#faq-list">
                                 <p>
                                     Мы работаем в городах: Астана, Караганды, а также города Северного Казахстана.
@@ -509,7 +517,8 @@
 
             <div class="row no-gutters">
                 <div class="col-lg-6 venue-map">
-                    <iframe src="https://yandex.kz/map-widget/v1/-/CCucNZ3E" width="560" height="400" frameborder="0" allowfullscreen="true"></iframe>
+                    <iframe src="https://yandex.kz/map-widget/v1/-/CCucNZ3E" width="560" height="400" frameborder="0"
+                            allowfullscreen="true"></iframe>
                 </div>
 
                 <div class="col-lg-6 venue-info">
@@ -531,88 +540,11 @@
         </div>
 
 
-
     </section>
-
-
-
-
 
 
 </main>
 
-
-<!-- <footer id="footer">
-   <div class="footer-top">
-     <div class="container">
-       <div class="row">
-
-         <div class="col-lg-3 col-md-6 footer-info">
-           <img src="img/logo.png" alt="TheEvenet">
-           <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et totam porro. Perspiciatis ad omnis fugit molestiae recusandae possimus. Aut consectetur id quis. In inventore consequatur ad voluptate cupiditate debitis accusamus repellat cumque.</p>
-         </div>
-
-         <div class="col-lg-3 col-md-6 footer-links">
-           <h4>Useful Links</h4>
-           <ul>
-             <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
-             <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
-             <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
-             <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
-             <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
-           </ul>
-         </div>
-
-         <div class="col-lg-3 col-md-6 footer-links">
-           <h4>Useful Links</h4>
-           <ul>
-             <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
-             <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
-             <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
-             <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
-             <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
-           </ul>
-         </div>
-
-         <div class="col-lg-3 col-md-6 footer-contact">
-           <h4>Contact Us</h4>
-           <p>
-             A108 Adam Street <br>
-             New York, NY 535022<br>
-             United States <br>
-             <strong>Phone:</strong> +1 5589 55488 55<br>
-             <strong>Email:</strong> info@example.com<br>
-           </p>
-
-           <div class="social-links">
-             <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-             <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-             <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-             <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-             <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-           </div>
-
-         </div>
-
-       </div>
-     </div>
-   </div>
-
-   <div class="container">
-     <div class="copyright">
-       &copy; Copyright <strong>TheEvent</strong>. All Rights Reserved
-     </div>
-     <div class="credits">
-       &lt;!&ndash;
-         All the links in the footer should remain intact.
-         You can delete the links only if you purchased the pro version.
-         Licensing information: https://bootstrapmade.com/license/
-         Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
-       &ndash;&gt;
-       Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-     </div>
-   </div>
- </footer>-->
 
 <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
